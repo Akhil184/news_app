@@ -6,22 +6,22 @@ import 'package:news/services/api_services.dart';
 import 'package:news/viewmodels/home_provider.dart';
 import 'package:news/viewmodels/login_provider.dart';
 import 'package:news/viewmodels/signup_provider.dart';
-import 'package:news/views/home_screen.dart';
 import 'package:news/views/login_screen.dart';
-import 'package:news/views/signup_screen.dart';
 import 'package:provider/provider.dart';
+import 'package:firebase_remote_config/firebase_remote_config.dart';
 
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
+  final remoteConfig = await setupRemoteConfig();
   runApp(
     MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => SignupProvider()),
         ChangeNotifierProvider(create: (_) => LoginProvider()),
         Provider<ApiService>(
-          create: (_) => ApiService(),
+          create: (_) => ApiService(remoteConfig),
         ),
         ChangeNotifierProvider<NewsProvider>(
           create: (context) => NewsProvider(context.read<ApiService>()),
@@ -29,15 +29,28 @@ Future<void> main() async {
 
       ],
 
-      child: MyApp(),
+      child: MyApp(remoteConfig: remoteConfig),
     ),
   );
 }
 
+Future<RemoteConfig> setupRemoteConfig() async {
+  final RemoteConfig remoteConfig = RemoteConfig.instance;
+  await remoteConfig.setConfigSettings(RemoteConfigSettings(
+    fetchTimeout: const Duration(seconds: 10),
+    minimumFetchInterval: const Duration(hours: 1),
+  ));
+  await remoteConfig.setDefaults(<String, dynamic>{
+    'country_code': 'IN',
+  });
+  await remoteConfig.fetchAndActivate();
+  return remoteConfig;
+}
 
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  final RemoteConfig remoteConfig;
+  const MyApp({Key? key,required this.remoteConfig}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -57,7 +70,7 @@ class MyApp extends StatelessWidget {
           home: child,
         );
       },
-      child:SignupScreen(),
+      child:LoginView(),
     );
   }
 }

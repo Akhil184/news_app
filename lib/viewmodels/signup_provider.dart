@@ -5,7 +5,6 @@ import '../services/api_services.dart';
 import '../views/login_screen.dart';
 
 class SignupProvider with ChangeNotifier {
-  final ApiService _apiService = ApiService();
 
   String _name = '';
   String _email = '';

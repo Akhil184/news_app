@@ -37,7 +37,7 @@ class SignupScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(height: 100.h),
+                SizedBox(height: 180.h),
                 Column(
                   children: <Widget>[
                     Consumer<SignupProvider>(
@@ -59,8 +59,9 @@ class SignupScreen extends StatelessWidget {
                               borderRadius: BorderRadius.circular(8.0),
                               borderSide: BorderSide(color: Colors.white),
                             ),
+                            contentPadding: EdgeInsets.symmetric(vertical: 8.0.h,horizontal:5.w),
                           ),
-                          style:TextStyle(color:Colors.black, fontFamily: 'Poppins',),
+                          style:TextStyle(color:Colors.black, fontFamily: 'Poppins',fontSize:10.sp),
                           validator: (value) {
                             if (value == null || value.isEmpty) {
                               return 'Name is required';
@@ -91,8 +92,9 @@ class SignupScreen extends StatelessWidget {
                               borderRadius: BorderRadius.circular(8.0),
                               borderSide: BorderSide(color: Colors.white),
                             ),
+                            contentPadding: EdgeInsets.symmetric(vertical: 8.0.h,horizontal:5.w), // Decrease vertical padding to reduce height
                           ),
-                          style:TextStyle(color:Colors.black, fontFamily: 'Poppins',),
+                          style:TextStyle(color:Colors.black, fontFamily: 'Poppins',fontSize:10.sp),
                           validator: (value) {
                             if (value == null || value.isEmpty) {
                               return 'Email is required';
@@ -127,9 +129,10 @@ class SignupScreen extends StatelessWidget {
                               borderRadius: BorderRadius.circular(8.0),
                               borderSide: BorderSide(color: Colors.white),
                             ),
+                            contentPadding: EdgeInsets.symmetric(vertical: 8.0.h,horizontal:5.w),
                           ),
                           obscureText: true,
-                          style:TextStyle(color:Colors.black, fontFamily: 'Poppins',),
+                          style:TextStyle(color:Colors.black, fontFamily: 'Poppins',fontSize:10.sp),
                           validator: (value) {
                             if (value == null || value.isEmpty) {
                               return 'Password is required';
@@ -141,7 +144,7 @@ class SignupScreen extends StatelessWidget {
                         );
                       },
                     ),
-                    SizedBox(height: 100.h),
+                    SizedBox(height: 180.h),
                     SizedBox(
                       width: screenWidth / 2,
                       height: screenHeight * 0.07,
@@ -157,7 +160,7 @@ class SignupScreen extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(8.0),
                               ),
                               textStyle: TextStyle(
-                                fontSize: 18.sp,
+                                fontSize: 14.sp,
                                 fontFamily: 'Poppins',
                               ),
                             ),

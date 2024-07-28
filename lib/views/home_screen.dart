@@ -45,10 +45,7 @@ class _HomeScreenState extends State<HomeScreen> {
         actions: [
           Row(
             children: [
-              Icon(
-                Icons.send,
-                color: Colors.white,
-              ),
+             Image.asset('assets/images/send.png'),
               SizedBox(width: screenWidth * 0.01),
               Text(
                 'IN',
@@ -84,7 +81,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: Text(
                     'Top Headlines',
                     style: TextStyle(
-                      fontSize: 20.sp,
+                      fontSize: 15.sp,
                       fontWeight: FontWeight.bold,
                         fontFamily: 'Poppins',
                       color:Colors.black
