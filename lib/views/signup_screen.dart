@@ -37,7 +37,7 @@ class SignupScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(height: 180.h),
+                SizedBox(height: 176.h),
                 Column(
                   children: <Widget>[
                     Consumer<SignupProvider>(
