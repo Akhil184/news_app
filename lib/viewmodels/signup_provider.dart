@@ -1,7 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import '../services/api_services.dart';
 import '../views/login_screen.dart';
 
 class SignupProvider with ChangeNotifier {
@@ -29,6 +28,9 @@ class SignupProvider with ChangeNotifier {
     notifyListeners();
   }
 
+
+
+
   Future<void> signup(BuildContext context) async {
     try {
       UserCredential userCredential = await FirebaseAuth.instance
@@ -41,11 +43,17 @@ class SignupProvider with ChangeNotifier {
           'email': _email,
         });
 
-        // Navigate to another screen if needed
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => LoginView()),
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Signup successful!')),
         );
+
+        // Navigate to login screen after a short delay to allow the user to see the success message
+        Future.delayed(Duration(seconds: 2), () {
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(builder: (context) => LoginView()),
+          );
+        });
       }
     } on FirebaseAuthException catch (e) {
       String message;
