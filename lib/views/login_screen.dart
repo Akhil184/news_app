@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:news/views/signup_screen.dart';
 import 'package:provider/provider.dart';
-
 import '../viewmodels/login_provider.dart';
 
 class LoginView extends StatelessWidget {
@@ -49,15 +48,15 @@ class LoginView extends StatelessWidget {
                             filled: true,
                             fillColor: Colors.white,
                             border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(8.0),
+                              borderRadius: BorderRadius.circular(10.0.r),
                               borderSide: BorderSide(color: Colors.white),
                             ),
                             enabledBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(8.0),
+                              borderRadius: BorderRadius.circular(10.0.r),
                               borderSide: BorderSide(color: Colors.white),
                             ),
                             focusedBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(8.0),
+                              borderRadius: BorderRadius.circular(10.0.r),
                               borderSide: BorderSide(color: Colors.white),
                             ),
                             contentPadding: EdgeInsets.symmetric(vertical: 8.0.h,horizontal:5.w),
@@ -87,15 +86,15 @@ class LoginView extends StatelessWidget {
                             filled: true,
                             fillColor: Colors.white,
                             border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(8.0),
+                              borderRadius: BorderRadius.circular(10.0.r),
                               borderSide: BorderSide(color: Colors.white),
                             ),
                             enabledBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(8.0),
+                              borderRadius: BorderRadius.circular(10.0.r),
                               borderSide: BorderSide(color: Colors.white),
                             ),
                             focusedBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(8.0),
+                              borderRadius: BorderRadius.circular(10.0.r),
                               borderSide: BorderSide(color: Colors.white),
                             ),
                             contentPadding: EdgeInsets.symmetric(vertical: 8.0.h,horizontal:5.w),
@@ -114,8 +113,8 @@ class LoginView extends StatelessWidget {
                     ),
                     SizedBox(height: 240.h),
                     SizedBox(
-                      width: screenWidth / 2,
-                      height: screenHeight * 0.07,
+                      width: screenWidth / 1.5,
+                      height: screenHeight * 0.06,
                       child: Consumer<LoginProvider>(
                         builder: (context, provider, _) {
                           return ElevatedButton(
@@ -123,12 +122,12 @@ class LoginView extends StatelessWidget {
                             style: ElevatedButton.styleFrom(
                               foregroundColor: Colors.white,
                               backgroundColor: Color(0xFF0c54BE),
-                              padding: EdgeInsets.symmetric(vertical: 16.h),
+                              padding: EdgeInsets.symmetric(vertical: 6.h),
                               shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(8.0),
+                                borderRadius: BorderRadius.circular(10.0.r),
                               ),
                               textStyle: TextStyle(
-                                fontSize: 14.sp,
+                                fontSize: 13.sp,
                                 fontFamily: 'Poppins',
                               ),
                             ),
@@ -142,11 +141,11 @@ class LoginView extends StatelessWidget {
                         },
                       ),
                     ),
-                    SizedBox(height: 20.h),
+                    SizedBox(height: 5.h),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        Text('New here?',style:TextStyle(color:Colors.black),),
+                        Text('New here?',style:TextStyle(color:Colors.black,fontSize:16.sp),),
                         TextButton(
                           onPressed: () {
                             Navigator.push(
@@ -158,6 +157,7 @@ class LoginView extends StatelessWidget {
                             'Signup',
                             style: TextStyle(
                               color: Color(0xFF0c54BE),
+                              fontSize:16.sp,
                               fontFamily: 'Poppins',
                             ),
                           ),

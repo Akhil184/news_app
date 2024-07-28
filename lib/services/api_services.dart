@@ -15,13 +15,29 @@ class ApiService {
 
   Future<News?> fetchNews() async {
     final countryCode = remoteConfig.getString('country_code');
-    final response = await http.get(Uri.parse('$_baseUrl/top-headlines?country=$countryCode&apiKey=$_apiKey'));
 
-    if (response.statusCode == 200) {
-      print(response.body);
-      return News.fromJson(json.decode(response.body));
-    } else {
-      // Handle error
+    try {
+      final response = await http.get(Uri.parse(
+          '$_baseUrl/top-headlines?country=$countryCode&apiKey=$_apiKey'));
+
+      if (response.statusCode == 200) {
+        return News.fromJson(json.decode(response.body));
+      } else {
+        // Handle server error
+        print('Server error: ${response.statusCode}');
+        return null;
+      }
+    } on http.ClientException catch (e) {
+      // Handle client-side error
+      print('Client error: $e');
+      return null;
+    } on FormatException catch (e) {
+      // Handle JSON parsing error
+      print('JSON format error: $e');
+      return null;
+    } catch (e) {
+      // Handle any other type of error
+      print('Unknown error: $e');
       return null;
     }
   }

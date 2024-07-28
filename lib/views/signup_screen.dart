@@ -37,7 +37,7 @@ class SignupScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(height: 176.h),
+                SizedBox(height: 170.h),
                 Column(
                   children: <Widget>[
                     Consumer<SignupProvider>(
@@ -48,15 +48,15 @@ class SignupScreen extends StatelessWidget {
                             filled: true,
                             fillColor: Colors.white,
                             border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(8.0),
+                              borderRadius: BorderRadius.circular(10.0.r),
                               borderSide: BorderSide(color: Colors.white),
                             ),
                             enabledBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(8.0),
+                              borderRadius: BorderRadius.circular(10.0.r),
                               borderSide: BorderSide(color: Colors.white),
                             ),
                             focusedBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(8.0),
+                              borderRadius: BorderRadius.circular(10.0.r),
                               borderSide: BorderSide(color: Colors.white),
                             ),
                             contentPadding: EdgeInsets.symmetric(vertical: 8.0.h,horizontal:5.w),
@@ -81,15 +81,15 @@ class SignupScreen extends StatelessWidget {
                             filled: true,
                             fillColor: Colors.white,
                             border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(8.0),
+                              borderRadius: BorderRadius.circular(10.0.r),
                               borderSide: BorderSide(color: Colors.white),
                             ),
                             enabledBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(8.0),
+                              borderRadius: BorderRadius.circular(10.0.r),
                               borderSide: BorderSide(color: Colors.white),
                             ),
                             focusedBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(8.0),
+                              borderRadius: BorderRadius.circular(10.0.r),
                               borderSide: BorderSide(color: Colors.white),
                             ),
                             contentPadding: EdgeInsets.symmetric(vertical: 8.0.h,horizontal:5.w), // Decrease vertical padding to reduce height
@@ -118,15 +118,15 @@ class SignupScreen extends StatelessWidget {
                             filled: true,
                             fillColor: Colors.white,
                             border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(8.0),
+                              borderRadius: BorderRadius.circular(10.0.r),
                               borderSide: BorderSide(color: Colors.white),
                             ),
                             enabledBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(8.0),
+                              borderRadius: BorderRadius.circular(10.0.r),
                               borderSide: BorderSide(color: Colors.white),
                             ),
                             focusedBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(8.0),
+                              borderRadius: BorderRadius.circular(10.0.r),
                               borderSide: BorderSide(color: Colors.white),
                             ),
                             contentPadding: EdgeInsets.symmetric(vertical: 8.0.h,horizontal:5.w),
@@ -146,8 +146,8 @@ class SignupScreen extends StatelessWidget {
                     ),
                     SizedBox(height: 180.h),
                     SizedBox(
-                      width: screenWidth / 2,
-                      height: screenHeight * 0.07,
+                      width: screenWidth / 1.5,
+                      height: screenHeight * 0.06,
                       child: Consumer<SignupProvider>(
                         builder: (context, provider, _) {
                           return ElevatedButton(
@@ -155,12 +155,12 @@ class SignupScreen extends StatelessWidget {
                             style: ElevatedButton.styleFrom(
                               foregroundColor: Colors.white,
                               backgroundColor: Color(0xFF0c54BE),
-                              padding: EdgeInsets.symmetric(vertical: 16.h),
+                              padding: EdgeInsets.symmetric(vertical:6.h),
                               shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(8.0),
+                                borderRadius: BorderRadius.circular(10.0.r),
                               ),
                               textStyle: TextStyle(
-                                fontSize: 14.sp,
+                                fontSize: 13.sp,
                                 fontFamily: 'Poppins',
                               ),
                             ),
@@ -174,11 +174,11 @@ class SignupScreen extends StatelessWidget {
                         },
                       ),
                     ),
-                    SizedBox(height: 20.h),
+                    SizedBox(height: 5.h),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        Text('Already have an account?',style:TextStyle(color:Colors.black),),
+                        Text('Already have an account?',style:TextStyle(color:Colors.black,fontSize:16.sp),),
                         TextButton(
                           onPressed: () {
                             // Handle login action
@@ -192,6 +192,7 @@ class SignupScreen extends StatelessWidget {
                             style: TextStyle(
                               color: Color(0xFF0c54BE),
                               fontFamily: 'Poppins',
+                              fontSize:16.sp
                             ),
                           ),
                         ),
