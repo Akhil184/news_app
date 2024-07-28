@@ -160,7 +160,7 @@ class SignupScreen extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(10.0.r),
                               ),
                               textStyle: TextStyle(
-                                fontSize: 13.sp,
+                                fontSize: 16.sp,
                                 fontFamily: 'Poppins',
                               ),
                             ),
