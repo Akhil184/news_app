@@ -35,7 +35,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 13.sp,
-                  color: Colors.white,
+                  color: Color(0xFFF5F9FD),
                   fontFamily: 'Poppins',
                 ),
               ),
@@ -55,7 +55,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   fontFamily: 'Poppins',
                 ),
               ),
-              SizedBox(width: screenWidth * 0.02),
+              SizedBox(width: screenWidth * 0.05),
             ],
           ),
         ],
@@ -95,7 +95,7 @@ class _HomeScreenState extends State<HomeScreen> {
               String timeAgo = formatTimeAgo(article.publishedAt);
 
               return Card(
-                color:Color(0xFFF5F9FD),
+                color:Color(0xFFFFFFFF),
                 margin: EdgeInsets.symmetric(
                   vertical: 8.0,
                   horizontal: MediaQuery.of(context).size.width * 0.05,
