@@ -14,6 +14,7 @@ class SignupScreen extends StatelessWidget {
     double screenHeight = MediaQuery.of(context).size.height;
 
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: Color(0xFFF5F9FD),
       body: Center(
         child: SingleChildScrollView(
@@ -30,6 +31,7 @@ class SignupScreen extends StatelessWidget {
                     'MyNews',
                     style: TextStyle(
                       fontSize: 18.sp,
+                      fontFamily: 'Poppins',
                       fontWeight: FontWeight.bold,
                       color: Color(0xFF0c54BE),
                     ),
@@ -58,6 +60,7 @@ class SignupScreen extends StatelessWidget {
                               borderSide: BorderSide(color: Colors.white),
                             ),
                           ),
+                          style:TextStyle(color:Colors.black, fontFamily: 'Poppins',),
                           validator: (value) {
                             if (value == null || value.isEmpty) {
                               return 'Name is required';
@@ -89,6 +92,7 @@ class SignupScreen extends StatelessWidget {
                               borderSide: BorderSide(color: Colors.white),
                             ),
                           ),
+                          style:TextStyle(color:Colors.black, fontFamily: 'Poppins',),
                           validator: (value) {
                             if (value == null || value.isEmpty) {
                               return 'Email is required';
@@ -125,6 +129,7 @@ class SignupScreen extends StatelessWidget {
                             ),
                           ),
                           obscureText: true,
+                          style:TextStyle(color:Colors.black, fontFamily: 'Poppins',),
                           validator: (value) {
                             if (value == null || value.isEmpty) {
                               return 'Password is required';
@@ -153,12 +158,13 @@ class SignupScreen extends StatelessWidget {
                               ),
                               textStyle: TextStyle(
                                 fontSize: 18.sp,
+                                fontFamily: 'Poppins',
                               ),
                             ),
                             onPressed: () {
                               if (_formKey.currentState?.validate() ?? false) {
                                 // If the form is valid, trigger the signup action
-                                // provider.signup(context);
+                                provider.signup(context);
                               }
                             },
                           );
@@ -169,7 +175,7 @@ class SignupScreen extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        Text('Already have an account?'),
+                        Text('Already have an account?',style:TextStyle(color:Colors.black),),
                         TextButton(
                           onPressed: () {
                             // Handle login action
@@ -182,6 +188,7 @@ class SignupScreen extends StatelessWidget {
                             'Login',
                             style: TextStyle(
                               color: Color(0xFF0c54BE),
+                              fontFamily: 'Poppins',
                             ),
                           ),
                         ),

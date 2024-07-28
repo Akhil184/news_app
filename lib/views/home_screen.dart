@@ -4,12 +4,12 @@ import 'package:provider/provider.dart';
 import '../viewmodels/home_provider.dart';
 import '../utils/time_utils.dart'; // Import the time utility function
 
-class NewsView extends StatefulWidget {
+class HomeScreen extends StatefulWidget {
   @override
-  _NewsViewState createState() => _NewsViewState();
+  _HomeScreenState createState() => _HomeScreenState();
 }
 
-class _NewsViewState extends State<NewsView> {
+class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
     super.initState();
@@ -25,6 +25,7 @@ class _NewsViewState extends State<NewsView> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color(0xFF0c54BE),
+        automaticallyImplyLeading: false,
         title: Row(
           children: [
             Expanded(
@@ -35,6 +36,7 @@ class _NewsViewState extends State<NewsView> {
                   fontWeight: FontWeight.bold,
                   fontSize: 13.sp,
                   color: Colors.white,
+                  fontFamily: 'Poppins',
                 ),
               ),
             ),
@@ -53,6 +55,7 @@ class _NewsViewState extends State<NewsView> {
                 style: TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
+                  fontFamily: 'Poppins',
                 ),
               ),
               SizedBox(width: screenWidth * 0.02),
@@ -81,8 +84,10 @@ class _NewsViewState extends State<NewsView> {
                   child: Text(
                     'Top Headlines',
                     style: TextStyle(
-                      fontSize: 24,
+                      fontSize: 20.sp,
                       fontWeight: FontWeight.bold,
+                        fontFamily: 'Poppins',
+                      color:Colors.black
                     ),
                   ),
                 );
@@ -93,6 +98,7 @@ class _NewsViewState extends State<NewsView> {
               String timeAgo = formatTimeAgo(article.publishedAt);
 
               return Card(
+                color:Color(0xFFF5F9FD),
                 margin: EdgeInsets.symmetric(
                   vertical: 8.0,
                   horizontal: MediaQuery.of(context).size.width * 0.05,
@@ -114,14 +120,18 @@ class _NewsViewState extends State<NewsView> {
                               article.source?.name ?? 'News Source',
                               style: TextStyle(
                                 fontWeight: FontWeight.bold,
-                                fontSize: MediaQuery.of(context).size.width * 0.045, // Responsive font size
+                                color:Colors.black,
+                                fontSize: MediaQuery.of(context).size.width * 0.045,
+                                fontFamily: 'Poppins',// Responsive font size
                               ),
                             ),
                             SizedBox(height: 8.0),
                             Text(
                               article.description ?? 'No Description',
                               style: TextStyle(
-                                fontSize: MediaQuery.of(context).size.width * 0.04, // Responsive font size
+                                  color:Colors.black,
+                                fontSize: MediaQuery.of(context).size.width * 0.04,
+                                fontFamily: 'Poppins',// Responsive font size
                               ),
                             ),
                             SizedBox(height: 8.0),
@@ -129,7 +139,8 @@ class _NewsViewState extends State<NewsView> {
                               timeAgo,
                               style: TextStyle(
                                 color: Colors.grey,
-                                fontSize: MediaQuery.of(context).size.width * 0.035, // Responsive font size
+                                fontSize: MediaQuery.of(context).size.width * 0.035,
+                                fontFamily: 'Poppins',// Responsive font size
                               ),
                             ),
                           ],
@@ -146,7 +157,7 @@ class _NewsViewState extends State<NewsView> {
                             article.urlToImage!,
                             fit: BoxFit.cover,
                           )
-                              : Image.asset('assets/news.png', fit: BoxFit.cover),
+                              : Image.asset('assets/images/news.png', fit: BoxFit.cover),
                         ),
                       ),
                     ],

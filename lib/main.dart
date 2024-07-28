@@ -11,6 +11,7 @@ import 'package:news/views/login_screen.dart';
 import 'package:news/views/signup_screen.dart';
 import 'package:provider/provider.dart';
 
+
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
@@ -56,7 +57,7 @@ class MyApp extends StatelessWidget {
           home: child,
         );
       },
-      child:LoginView(),
+      child:SignupScreen(),
     );
   }
 }

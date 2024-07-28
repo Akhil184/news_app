@@ -15,6 +15,7 @@ class LoginView extends StatelessWidget {
     double screenHeight = MediaQuery.of(context).size.height;
 
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: Color(0xFFF5F9FD),
       body: Center(
         child: SingleChildScrollView(
@@ -30,6 +31,7 @@ class LoginView extends StatelessWidget {
                   child: Text(
                     'MyNews',
                     style: TextStyle(
+                      fontFamily: 'Poppins',
                       fontSize: 18.sp,
                       fontWeight: FontWeight.bold,
                       color: Color(0xFF0c54BE),
@@ -59,6 +61,7 @@ class LoginView extends StatelessWidget {
                               borderSide: BorderSide(color: Colors.white),
                             ),
                           ),
+                          style:TextStyle(color:Colors.black, fontFamily: 'Poppins',),
                           onChanged: provider.setEmail,
                           validator: (value) {
                             if (value == null || value.isEmpty) {
@@ -96,6 +99,7 @@ class LoginView extends StatelessWidget {
                             ),
                           ),
                           obscureText: true,
+                          style:TextStyle(color:Colors.black, fontFamily: 'Poppins',),
                           onChanged: provider.setPassword,
                           validator: (value) {
                             if (value == null || value.isEmpty) {
@@ -123,6 +127,7 @@ class LoginView extends StatelessWidget {
                               ),
                               textStyle: TextStyle(
                                 fontSize: 18.sp,
+                                fontFamily: 'Poppins',
                               ),
                             ),
                             onPressed: () {
@@ -139,7 +144,7 @@ class LoginView extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        Text('New here?'),
+                        Text('New here?',style:TextStyle(color:Colors.black),),
                         TextButton(
                           onPressed: () {
                             Navigator.push(
@@ -151,6 +156,7 @@ class LoginView extends StatelessWidget {
                             'Signup',
                             style: TextStyle(
                               color: Color(0xFF0c54BE),
+                              fontFamily: 'Poppins',
                             ),
                           ),
                         ),

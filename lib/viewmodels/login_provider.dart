@@ -1,6 +1,6 @@
-// view_models/login_view_model.dart
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:news/views/home_screen.dart';
 
 class LoginProvider with ChangeNotifier {
   String _email = '';
@@ -27,6 +27,11 @@ class LoginProvider with ChangeNotifier {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text('Login successful')),
       );
+      // Navigate to the next page
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => HomeScreen()), // Change HomePage to your target page
+      );
     } on FirebaseAuthException catch (e) {
       String message;
       switch (e.code) {
@@ -37,16 +42,11 @@ class LoginProvider with ChangeNotifier {
           message = 'Wrong password provided.';
           break;
         default:
-          message = 'An error occurred. Please try again.';
+          message = 'An error occurred. Please try again. Code: ${e.code}';
       }
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text(message)),
       );
     }
   }
-
-  // void login() {
-  //   // Add your login logic here
-  //   print('Email: $_email, Password: $_password');
-  // }
 }
