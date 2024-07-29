@@ -147,7 +147,7 @@ class SignupScreen extends StatelessWidget {
                     SizedBox(height: 180.h),
                     SizedBox(
                       width: screenWidth / 1.5,
-                      height: screenHeight * 0.06,
+                      height:49.h,
                       child: Consumer<SignupProvider>(
                         builder: (context, provider, _) {
                           return ElevatedButton(
